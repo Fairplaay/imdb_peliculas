@@ -1,0 +1,17 @@
+<% include header.ejs%>
+<div class="container">
+    <div class="item">
+        <form action="/actualizar/<%= data[0].movie_id %>" method="POST" class="form">
+          <fieldset>
+            <div class="container"><label class="item i-b v-top ph-3" for="movie_id">IMDB_id</label><input class="item i-b v-top ph-9" required type="text" name="id" id="id" value='<%= data[0].movie_id %>'disabled><div>
+                <input required type="hidden" name="movie_id" id="movie_id" value='<%= data[0].movie_id %>'>
+            <div class="container"><label class="item i-b v-top ph-3" for="title">Titulo</label><input class="item i-b v-top ph-9" required type="text" name="title" id="title" value='<%= data[0].title %>'><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="release_year">Año</label><input class="item i-b v-top ph-9" required type="text" name="release_year" id="release_year" value='<%= data[0].release_year %>'><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="rating">Calificacion</label><input class="item i-b v-top ph-9" required type="text" name="rating" id="rating" value='<%= data[0].rating %>'><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="imagen">Imagen</label><input class="item i-b v-top ph-9" required type="text" name="imagen" id="imagen" value='<%= data[0].imagen %>'><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="enviar"></label><input type="submit" class="button edit" value="Editar" id="enviar"><div>
+          </fieldset>
+        </form>
+    </div>
+</div>
+<% include footer.ejs%>

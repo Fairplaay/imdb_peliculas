@@ -1,0 +1,53 @@
+<% include header.ejs %>
+
+<section class="container">
+	<article class="item">
+		<% if (data.length) { %>
+			<table class="table">
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Año</th>
+					<th>Puntuación</th>
+					<th>Poster</th>
+					<th colspan="2">
+						<form action="/agregar" method="get">
+							<input type="submit" class="button add" value="Agregar">
+						</form>
+					</th>
+				</tr>
+				<% data.forEach(function(item){ %>
+					<tr>
+						<td><%=item.movie_id %></td>
+						<td><%=item.title %></td>
+						<td><%=item.release_year %></td>
+						<td><%=item.rating %></td>
+						<td><img class="poster" src="<%= item.imagen %>" alt=""></td>
+						<td>
+							<form action="/editar/<%= item.movie_id %>" method="get">
+								<input type="submit" class="button edit" value="Editar">
+							</form>
+						</td>
+						<td>
+							<form action="/eliminar/<%= item.movie_id %>" method="post">
+								<input type="button" class="button delete" value="Eliminar"onClick='eliminar(this)'>
+							</form>
+						</td>
+					</tr>
+					<script>
+						function eliminar(input){
+							var deleteOk = confirm('estas seguro de eliminar la pelicula')
+							return (deleteOk) ? input.parentNode.submit(): false
+						}
+					</script>
+				<% }); %>
+			</table>
+		<% } else{ %>
+			<p class="error">
+				<%=noData%>
+			</p>
+			<%}%>
+	</article>
+</section>
+
+<% include footer.ejs %>

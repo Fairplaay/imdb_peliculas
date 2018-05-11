@@ -1,0 +1,16 @@
+<% include header.ejs%>
+<div class="container">
+    <div class="item">
+        <form action="/" method="POST" class="form">
+          <fieldset>
+            <div class="container"><label class="item i-b v-top ph-3" for="movie_id">IMDB_id</label><input class="item i-b v-top ph-9" required type="text" name="movie_id" id="movie_id"><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="title">Titulo</label><input class="item i-b v-top ph-9" required type="text" name="title" id="title"><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="release_year">Año</label><input class="item i-b v-top ph-9" required type="text" name="release_year" id="release_year"><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="rating">Calificacion</label><input class="item i-b v-top ph-9" required type="text" name="rating" id="rating"><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="imagen">Imagen</label><input class="item i-b v-top ph-9" required type="text" name="imagen" id="imagen"><div>
+            <div class="container"><label class="item i-b v-top ph-3" for="enviar"></label><input type="submit" class="button add" value="Agregar" id="enviar"><div>
+          </fieldset>
+        </form>
+    </div>
+</div>
+<% include footer.ejs%>
